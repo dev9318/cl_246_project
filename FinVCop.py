@@ -16,7 +16,7 @@ h = 100
 
 W = [i*pow(10,-3) for i in range(1,11)]
 
-for w, i in zip(W,[i for i in range(10)]):
+for (w, i) in zip(W,[i for i in range(10)]):
     m = pow(h*(2*w+2*b)/(k*w*b),0.5)
     M = del_T*pow(h*(2*w+2*b)*(k*w*b),0.5)
     q = M*(np.sinh(m*L)+(h/(m*k))*np.cosh(m*L))/(np.cosh(m*L)+(h/(m*k))*np.sinh(m*L))
