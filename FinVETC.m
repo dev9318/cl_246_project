@@ -25,7 +25,7 @@ q = M*(sinh(m*L)+(h/(m*k))*cosh(m*L))/(cosh(m*L)+(h/(m*k))*sinh(m*L));
 
 I = 1:1000;
  for i = 1:1000
-     copn(i) = q*i + h*del_T*(16*power(10,-4)-w*b*i);
+     copn(i) = q*i - h*del_T*(16*power(10,-4)-w*b*i);
  end
 copn
 plot(copn,I)
