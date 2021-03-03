@@ -1,0 +1,9 @@
+s = ;
+del_T = ;
+I = ;
+density = ;
+L = ;
+A = ;
+h = ;
+S = ;
+q_k = 0; %(assumption)
