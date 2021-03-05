@@ -12,4 +12,5 @@ I = alpha * T_c/R;
 m = 1;
 C_p = 4.2e3;
 T = 30+273;
+n=10;
 time = m*C_p*(T-T_c)/n*(alpha*T_c.*I - 1/2*I.^2.*R - K*(T_c-T_h));
