@@ -14,12 +14,21 @@ Z = alpha^2/(density*k);
 I_cop = alpha/R*(T_h-T_c)/((1+Z*(T_c + T_h)/2)^0.5-1) %current where COP is minimised
 I_mp = alpha * T_c/R
 COP = zeros(20,1);
+Q_C = zeros(20,1);
 i = 1;
-for I = linspace(0,I_mp,20)
+n=128;
+I_n = zeros(20,1);
+for I = linspace(0,28,20)
+    Q_C(i) = n*(alpha*T_c.*I - 1/2*I.^2.*R - K*(T_c-T_h));
     COP(i) = (alpha*T_c.*I - 1/2*I.^2.*R - K*(T_c-T_h))/(alpha*(T_h-T_c)+I.^2.*R);
-    I_n(i) = I/I_mp;
+    I_n(i) = I;
     i = i+1;
 end
+yyaxis left
 plot(I_n,COP)
 ylabel("COP")
-xlabel("I/I_mp")
+xlabel("I")
+yyaxis right
+plot(I_n,Q_C)
+ylabel("Q_c")
+legend(["COP","Q_c"])
