@@ -18,7 +18,7 @@ Q_C = zeros(20,1);
 i = 1;
 n=128;
 I_n = zeros(20,1);
-for I = linspace(0,28,20)
+for I = linspace(0,35,20)
     Q_C(i) = n*(alpha*T_c.*I - 1/2*I.^2.*R - K*(T_c-T_h));
     COP(i) = (alpha*T_c.*I - 1/2*I.^2.*R - K*(T_c-T_h))/(alpha*(T_h-T_c)+I.^2.*R);
     I_n(i) = I;
@@ -27,7 +27,7 @@ end
 yyaxis left
 plot(I_n,COP)
 ylabel("COP")
-xlabel("I")
+xlabel("I (in A)")
 yyaxis right
 plot(I_n,Q_C)
 ylabel("Q_c")
